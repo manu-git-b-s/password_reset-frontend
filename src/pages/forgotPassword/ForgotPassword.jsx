@@ -21,6 +21,7 @@ const ForgotPassword = () => {
         values
       );
       if (res.status === 201) {
+        toast.success("Password reset link has been sent to your mail");
         btn.disabled = true;
       }
     } catch (error) {
@@ -60,14 +61,7 @@ const ForgotPassword = () => {
           <span className="text-danger">{formik.errors.email}</span>
         </div>
         <div className="d-grid mt-4">
-          <button
-            id="sendEmailBtn"
-            type="submit"
-            className="btn-success btn"
-            onClick={() => {
-              toast.success("Password reset link has been sent to your mail");
-            }}
-          >
+          <button id="sendEmailBtn" type="submit" className="btn-success btn">
             Send Email
           </button>
         </div>

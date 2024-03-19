@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Login = ({ setUsername }) => {
   const navigate = useNavigate();
 
   const initialValues = { email: "", password: "" };
@@ -24,6 +24,7 @@ const Login = () => {
         values
       );
       if (res.status === 200) {
+        setUsername(res.data.data.username);
         toast.success(res.data.message);
         navigate("/dashboard");
       }

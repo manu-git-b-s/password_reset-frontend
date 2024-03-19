@@ -1,10 +1,10 @@
 import Navbar from "../../components/Navbar";
 
-const Dashboard = () => {
+const Dashboard = ({ username }) => {
   return (
     <div>
       <Navbar />
-      <h1 className="text-center mt-5">Welcome to dashboard</h1>
+      <h1 className="text-center mt-5">Welcome to dashboard {username}</h1>
     </div>
   );
 };
